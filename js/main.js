@@ -1,14 +1,21 @@
 (function ($) {
   "use strict";
-
+  
   // Preloader
   $(window).on('load', function () {
+    window.scrollTo(0, 0);
     if ($('#preloader').length) {
       $('#preloader').delay(100).fadeOut('slow', function () {
         $(this).remove();
       });
     }
   });
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
+  
 
   // Back to top button
   $(window).scroll(function() {
